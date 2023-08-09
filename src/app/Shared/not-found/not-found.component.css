@@ -1,0 +1,13 @@
+.contain {
+    display: flex;
+    align-items: center; /* Dikey (sütun) ortalama */
+    justify-content: center; /* Yatay (satır) ortalama */
+    height: 100vh; /* İsteğe bağlı: sayfa yüksekliği kadar konteyner yüksekliği */
+    background-color: rgb(235, 236, 135);
+  }
+  
+  .centered-text {
+    font-size: 70px;
+    text-align: center; /* Metni yatay olarak ortala */
+  }
+  

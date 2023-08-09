@@ -1,0 +1,17 @@
+
+.container{
+    background-color: rgba(201, 201, 201, 0.253);
+    border-radius: 15px;
+    padding: 20px;
+}
+form{
+    width: 50%;
+    align-items: center;
+}
+form label,input,select{
+    font-size: 20px;
+}
+form p{
+    font-size: 17px;
+}
+

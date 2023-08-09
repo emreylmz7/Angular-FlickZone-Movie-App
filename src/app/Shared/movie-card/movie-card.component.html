@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-md-3" *ngFor="let movie of movieContent" >
+        <form #form="ngForm" (ngSubmit)="addWatchList(movie.id)">
+            <input [(ngModel)]="movie.id" type="hidden" name="id" #name="ngModel" id="id">
+            <div class="card m-2">
+                <img class="card-img-top" src="../../assets/{{ movie.imageUrl }}" alt="Card image cap">
+                <div class="card-body">
+                <h3 class="card-title">{{ movie.name }}</h3>
+                <p class="card-text text-muted ">{{movie.year}} · Imdb: {{movie.Imdb}}</p>
+                <div class="d-flex justify-content-center">
+                    <a routerLink="/movies/{{ movie.id }}" class="btn btn-dark custom-btn-style m-1"><i class="fa-solid fa-magnifying-glass"></i> View</a>
+                    <button type="submit" (click)="addWatchList(movie.id)" class="btn btn-{{movieButton[0]}} custom-btn-style m-1"><i class="fa-solid fa-{{movieButton[1]}}"></i> {{movieButton[2]}}</button>
+                </div>
+                </div>
+            </div>
+        </form>
+    </div>       
+</div>    

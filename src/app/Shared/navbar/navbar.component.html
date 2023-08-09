@@ -1,0 +1,21 @@
+<nav>
+  <div class="navbar">
+    <div class="container">
+      <a routerLink="/" class="logo">FlickZone </a>
+      <ul class="nav-links ml-auto mt-3">
+        <li><a routerLink="/"><i class="fa-solid fa-house" style="color: #e6f056;"></i> Home</a></li>
+        <li><a routerLink="/movies"><i class="fa-solid fa-film" style="color: #e6f056;"></i> Movie</a></li>
+        <li><a href="#"><i class="fa-solid fa-tv" style="color: #e6f056;"></i> TV Show</a></li>
+        <li *ngIf="isAuthenticated"><a routerLink="/watchlist"><i class="fa-solid fa-list" style="color: #e6f056;"></i> Watch List</a></li>
+        <li *ngIf="isAuthenticated"><a routerLink="/movies/addmovie"><i class="fa-solid fa-plus" style="color: #e6f056;"></i> Add Movie</a></li>
+        <li *ngIf="isAuthenticated"><a routerLink="/categories/add"><i class="fa-solid fa-plus" style="color: #e6f056;"></i> Add Category</a></li>
+      </ul>
+      <ul class="nav-links ms-auto mt-3">
+        <li *ngIf="isAuthenticated" style="margin-right: 0px;"><a (click)="logout()" routerLink="/auth"><i class="fa-solid fa-right-from-bracket" style="color: #e6f056;"></i> Logout</a></li>
+        <li *ngIf="!isAuthenticated" style="margin-right: 0px;"><a routerLink="/auth"> Login</a></li>
+        <li *ngIf="!isAuthenticated" style="margin-right: 0px;"><a routerLink="/auth"> Register</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,21 @@
+
+<div class="header">
+  <div class="container">
+    <h1 style="font-weight: bold;">FlickZone</h1>
+    <p>• Where Stories Come to Life on the Silver Screen •</p>
+  </div>
+</div>
+
+<div class="container mt-3">
+  <h2 class="m-3">All Movies</h2> <hr>
+  <div *ngIf="!loading" class="row">
+    <movie-card [movieContent]= "movies"></movie-card>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center">
+  <div *ngIf="loading" class="spinner-border mt-5" role="status">
+    <span class="sr-only"></span>
+  </div>
+</div>
+

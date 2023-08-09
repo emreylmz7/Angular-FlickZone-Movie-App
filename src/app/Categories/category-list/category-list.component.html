@@ -1,0 +1,8 @@
+<div class="list-group">
+    <a (click)="selectCategory()" class="list-group-item list-group-item-action" [class.active]="displayAll" routerLink="/movies">
+        All Movies
+    </a>
+    <a *ngFor="let c of categories" routerLink="/movies/category/{{c.id}}" (click)="selectCategory(c)" href="#" class="list-group-item list-group-item-action" [class.active]="c == selectedCategory">
+        {{c.name}}
+    </a>
+</div>

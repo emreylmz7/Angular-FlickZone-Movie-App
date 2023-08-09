@@ -1,0 +1,17 @@
+a{
+    font-size: 20px;
+}
+
+/* Örneğin, seçilen kategorinin arkaplan rengini kırmızı yapalım */
+.list-group-item.active {
+    background-color:rgb(235, 236, 135) !important; /* !important kullanarak mevcut stil kurallarını geçersiz kılabilirsiniz */
+    border-color: gray;
+    color: black;
+    /* Diğer stil ayarları... */
+}
+
+/* Seçili olmayan kategorilerin arkaplan rengini istediğiniz gibi ayarlayabilirsiniz */
+.list-group-item {
+    background-color: white; /* Varsayılan arkaplan rengi */
+    /* Diğer stil ayarları... */
+}

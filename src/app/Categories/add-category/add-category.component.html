@@ -1,0 +1,13 @@
+<div class="container mt-3">
+    <h2 class="text-center">Category Add</h2> <hr>
+    <form class="col-md-6 offset-md-3">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Category Name</label>
+            <input #name type="text" class="form-control" id="name" name="name" placeholder="">
+        </div>
+       
+        <div class="col d-flex justify-content-center align-items-center mt-3">
+            <button (click)="addCategory(name)" type="button" class="btn btn-dark btn-lg">Add Category</button>
+        </div>
+    </form>
+</div>

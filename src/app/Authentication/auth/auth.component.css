@@ -1,0 +1,12 @@
+
+.container{
+    background-color: rgba(201, 201, 201, 0.253);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+}
+form{
+    width: 50%;
+    align-items: center;
+    height: 40vh;
+}

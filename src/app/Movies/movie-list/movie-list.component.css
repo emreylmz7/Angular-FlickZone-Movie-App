@@ -1,0 +1,12 @@
+.custom-btn-style {
+    width: 150px; 
+}
+
+.card{
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card p{
+    font-size: 20px;
+
+}

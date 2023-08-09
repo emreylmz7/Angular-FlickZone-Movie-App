@@ -1,0 +1,74 @@
+<div class="container mt-3">
+
+    <h2 class="text-center">Movie Add</h2> <hr>
+
+    <form #form="ngForm" class="col-md-6 offset-md-3" (ngSubmit)="addMovie(form)">
+        <div class="alert alert-danger" *ngIf="error">
+            {{error}}
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Name</label>
+            <input required minlength="3" [(ngModel)]="model.name"  type="text" class="form-control" #name="ngModel" id="name" name="name" placeholder="Movie Name">
+            <div class="text-danger mt-1" *ngIf="name.invalid && name.touched">
+                <p>Movie name at least 5 charachter</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">IMDB</label>
+            <input required min=1 max=10  [(ngModel)]="model.Imdb" #imdb="ngModel" type="number" class="form-control" id="Imdb" name="Imdb" placeholder="Imdb Score">
+            <div class="text-danger mt-1" *ngIf="imdb.invalid && imdb.touched">
+                <p>Imdb score should be between 1-10</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Year</label>
+            <input required min=1950 max=2023 [(ngModel)]="model.year" #year="ngModel" type="number" class="form-control" id="year" name="year" placeholder="Movie Year">
+            <div class="text-danger mt-1" *ngIf="year.invalid && year.touched">
+                <p>Movie year should be between 1950-2023</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Image Url</label>
+            <input required [(ngModel)]="model.imageUrl" #imageUrl="ngModel" type="text" class="form-control" id="imageUrl" name="imageUrl" placeholder="Url">
+            <div class="text-danger mt-1" *ngIf="imageUrl.invalid && imageUrl.touched">
+                <p>Movie image must be entered</p>
+            </div>
+        </div>
+        <div class="row m-2">
+            <div class="col-6">
+                <div class="form-check mt-3">
+                    <input [(ngModel)]="model.isActive" class="form-check-input" type="checkbox" value="" name="isActive" id="isActive">
+                    <label class="form-check-label" for="isActive">
+                      Active
+                    </label>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-check mt-3">
+                    <input [(ngModel)]="model.inList" class="form-check-input" type="checkbox" value="" name="inList" id="inList">
+                    <label class="form-check-label" for="inList">
+                      Add Watch List
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group mb-3 mt-3">
+            <label for="categoryId">Category</label>
+            <select [(ngModel)]="model.categoryId" class="form-control" id="categoryId" name="categoryId">
+              <option value="0">Category</option>
+              <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <ckeditor [(ngModel)]="model.description" [editor]="Editor" id="description" name="description"></ckeditor>
+        </div>
+
+        <div class="col d-flex justify-content-center align-items-center mt-3">
+            <button type="submit" [disabled]="form.invalid" class="btn btn-dark btn-lg">Add Movie</button>
+        </div>
+    </form>
+</div>
+

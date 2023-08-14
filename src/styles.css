@@ -1,6 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=REM&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre&display=swap');
 
-*{
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* *{
   font-family: 'REM', sans-serif;
-} 
+}  */
+
+@layer base {
+  h1,h2,h3,h4,h5,h6 {
+    @apply font-gemunu uppercase;
+  }
+
+  a{
+    @apply font-gemunu;
+  }
+}

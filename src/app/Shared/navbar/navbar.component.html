@@ -20,10 +20,10 @@
   </div>
 </nav> -->
 
-<header class="bg-black py-6 lg:py-12 text-flickzone-grey font-gemunu">
+<header class="bg-gradient-to-b from-flickzone-gold to-black py-6 lg:py-12 text-flickzone-grey font-gemunu">
     <div class="container flex items-center justify-between space-x-8 lg:space-x-16">
       <!--Logo -->
-      <a href="#" class="pl-4 md:pl-0 text-4xl lg:text-6xl font-bold text-flickzone-yellow text-transparent bg-gradient-to-r bg-clip-text from-flickzone-yellow to-flickzone-grey">FlickZone</a>  
+      <a href="#" class="pl-4 md:pl-0 text-4xl lg:text-6xl font-bold text-flickzone-yellow text-transparent bg-gradient-to-r bg-clip-text from-flickzone-yellow to-gray-200">FlickZone</a>  
       
       <!--Mobile Menü -->
       <div class="block md:hidden pr-4">
@@ -56,7 +56,7 @@
           <!--Search Area-->
           <form>
             <div class="group border-r px-4 mx-4 py-1 border-flickzone-gold">
-              <input type="text" class="opacity-100 group-hover:opacity-100 bg-transparent border-b border-flickzone-blue focus:outline-none w-24 lg:w-44 transition duration-500">
+              <input type="text" class="opacity-0 group-hover:opacity-100 hover:!opacity-100 bg-transparent border-b border-flickzone-blue focus:outline-none w-24 lg:w-44 transition duration-500">
               <button class="-ml-4 group-hover:ml-0 transition duration-500"><i class="fa-solid fa-magnifying-glass group-hover:text-flickzone-yellow transition duration-500"></i></button>
             </div>
           </form>
@@ -67,7 +67,7 @@
               <i class="fa-solid fa-right-from-bracket" style="color: #e6f056;"></i> Log Out
             </a>
             <a *ngIf="!isAuthenticated" routerLink="/auth" class="hover:text-flickzone-yellow text-flickzone-grey transition duration-500">Login</a>
-            <a *ngIf="!isAuthenticated" routerLink="/auth" class="bg-flickzone-gold px-3 py-1 text-flickzone-grey hover:bg-flickzone-yellow hover:text-flickzone-grey cursor-pointer transition duration-500 whitespace-nowrap">Sign Up</a>
+            <a *ngIf="!isAuthenticated" routerLink="/auth" class="bg-flickzone-gold px-3 py-1 rounded-md text-flickzone-grey hover:bg-flickzone-yellow hover:text-flickzone-grey cursor-pointer transition duration-500 whitespace-nowrap">Sign Up</a>
           </div>
 
         </div>

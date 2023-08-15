@@ -7,6 +7,7 @@ import { CategoriesModule } from './Categories/categories.module';
 import { AuthenticationModule } from './Authentication/Authentication.module';
 import { SharedModule } from './Shared/shared.module';
 import { MoviesModule } from './Movies/movies.module';
+import { NewsRepository } from './News/news.repository';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { MoviesModule } from './Movies/movies.module';
     SharedModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [NewsRepository],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

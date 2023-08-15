@@ -1,63 +1,62 @@
 
-<!-- <div class="header">
-  <div class="container">
-    <h1 style="font-weight: bold;">FlickZone</h1>
-    <p>• Where Stories Come to Life on the Silver Screen •</p>
-  </div>
-</div> -->
+<homeheader></homeheader>
 
-<section class="h-64 md:h-96 lg:h-128 group relative">
-  <img src="../../../assets/batmanflash.jpg" alt="Main Image" class="h-full w-full object-cover">
+<!--Movies Section-->
+<section class="py-24 bg-black">
+  <div  *ngIf="!loading" class="container flex space-x-16">
+    <!--Movies-->
+    <div class="basis-2/3">
+      <div class="flex space-x-2 divide-x divide-flickzone-gold divide-opacity-50 mb-8">
+        <h2><a class="text-flickzone-gold pl-2 hover:text-flickzone-gold duration-500" href="#">Latest</a></h2>
+        <h2><a class="text-flickzone-grey pl-2 hover:text-flickzone-gold duration-500" href="#">Popular</a></h2>
+        <h2><a class="text-flickzone-grey pl-2 hover:text-flickzone-gold duration-500" href="#">Best</a></h2>
+      </div>
 
-  <div class="absolute bottom-0 w-full bg-gradient-to-b from-transparent to-black">
-    <div class="container">
-
-      <h3 class="text-flickzone-gold tracking-wider group-hover:mb-1 duration-500">Action, Drama, Thriller</h3>
-      <h1 class="text-4xl lg:text-6xl text-flickzone-grey group-hover:mb-1 duration-500">The Flash</h1>
-      <p class="text-flickzone-grey text-sm lg:text-base group-hover:mb-1 duration-500 w-3/4 lg:w-2/3">
-        Summaries. Barry Allen uses his super speed to change the past, but his attempt to save his family creates a world without super heroes, forcing him to race for his life in order to save the future.
-         Barry Allen is struck by a bolt of lightning and thus, an extraordinary power is born inside him: The Speed Force.
-      </p>
-      <div class="flex space-x-8 opacity-25 group-hover:opacity-100 group-hover:mb-20 duration-1000">
-        
-        <div class="flex space-x-2 items-center cursor-pointer">
-          <a href="#" class="text-flickzone-grey uppercase lg:text-lg hover:text-flickzone-gold duration-500">Watch Trailer</a>
-          <div class="flex h-8 w-8 rounded-full text-center items-center justify-center bg-flickzone-gold text-flickzone-grey">
-            <i class="fa-solid fa-play"></i>
+      <div class="flex flex-wrap">
+        <div *ngFor="let movie of movies" class="group relative p-1 overflow-hidden basis-1/3">
+          <img src="../../../assets/{{movie.imageUrl}}" class="group-hover:scale-110 rounded-md group-hover:opacity-50 duration-500 w-full">
+          <div class="absolute px-6 bottom-8">
+            <h3 class="text-flickzone-grey group-hover:text-flickzone-yellow group-hover:mb-2 duration-500">{{movie.name}}</h3>
+            <p class="text-flickzone-grey  opacity-0 group-hover:mb-10 duration-500 group-hover:!opacity-100">{{movie.year}} • IMDB: {{movie.Imdb}}</p>
+            <div class="absolute flex space-x-8 text-flickzone-grey opacity-0 -bottom-2 group-hover:bottom-2 group-hover:!opacity-100 duration-500">
+              <a routerLink="/movies/{{ movie.id }}"><i class="fa-solid fa-play text-flickzone-grey hover:text-flickzone-yellow"></i></a>
+              <a href="#"><i class="fa-solid fa-arrow-right text-flickzone-grey  hover:text-flickzone-yellow"></i></a>
+            </div>
           </div>
-
-          <div class="flex space-x-2 items-center cursor-pointer">
-              <a href="#" class="text-flickzone-grey uppercase lg:text-lg hover:text-flickzone-gold duration-500">Full Synopsis</a>
-              <div class="flex h-8 w-8 rounded-full text-center items-center justify-center bg-flickzone-gold text-flickzone-grey">
-                <i class="fas fa-arrow-right"></i>
-              </div>
-          </div>
-
         </div>
       </div>
     </div>
+    <!--HOT NEWS SECTION-->
+    <div class="basis-1/3">
+      <h2 class="text-flickzone-grey mb-8">Hot News</h2>
+      <div class="flex flex-col h-full pb-16 justify-between">
+        <div *ngFor="let new of news" class="flex items-center group">
+          <div class="basis-1/3 h-full">
+            <img src="../../../assets/{{new.imageUrl}}" class="h-full w-full object-cover rounded-md">
+          </div>
+          <div class="basis-2/3 pl-7 text-flickzone-grey group-hover:text-flickzone-yellow group-hover:cursor-pointer duration-500">
+            <p class="text-sm">{{new.description}}</p>
+            <p class="text-xs tracking-tighter mt-2 font-bold font-gemunu">{{new.date.getDate()}} . {{new.date.getMonth() + 1}} .{{new.date.getFullYear()}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
-  <div class="flex space-x-3 absolute bottom-5 left-10 opacity-100 group-hover:opacity-100 duration-1000">
-    <div class="w-3 h-3 lg:w-4 lg:h-4 rounded-full bg-flickzone-gold"></div>
-    <div class="w-3 h-3 lg:w-4 lg:h-4 rounded-full bg-flickzone-grey"></div>
-    <div class="w-3 h-3 lg:w-4 lg:h-4 rounded-full bg-flickzone-grey"></div>
-    <div class="w-3 h-3 lg:w-4 lg:h-4 rounded-full bg-flickzone-grey"></div>
-  </div>
 </section>
 
-<div class="container mt-3">
+
+<!-- <div class="container mt-3">
   <h2 class="m-3">All Movies</h2> <hr>
   <div *ngIf="!loading" class="row">
     <movie-card [movieContent]= "movies"></movie-card>
   </div>
-</div>
-
-<h2 class="text-3xl font-bold container text-flickzone-yellow">Tailwind Update</h2> <hr>
-
+</div> -->
+<!-- 
 <div class="d-flex justify-content-center">
-  <div *ngIf="loading" class="spinner-border mt-5" role="status">
+  <div *ngIf="loading" class="spinner-border text-light mt-5" role="status">
     <span class="sr-only"></span>
   </div>
-</div>
+</div> -->
 

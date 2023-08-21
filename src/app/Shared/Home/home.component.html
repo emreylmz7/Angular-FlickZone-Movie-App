@@ -1,19 +1,19 @@
-
-<homeheader></homeheader>
+<body class="font-open">
+  <homeheader></homeheader>
 
 <!--Movies Section-->
 <section class="py-24 bg-black">
-  <div  *ngIf="!loading" class="container flex space-x-16">
+  <div  *ngIf="!loading" class="container flex flex-col lg:flex-row lg:space-x-16 space-y-8 lg:space-y-0">
     <!--Movies-->
     <div class="basis-2/3">
-      <div class="flex space-x-2 divide-x divide-flickzone-gold divide-opacity-50 mb-8">
+      <div class="flex space-x-2 divide-x divide-flickzone-gold divide-opacity-50 mb-8 pl-10 lg:pl-0">
         <h2><a class="text-flickzone-gold pl-2 hover:text-flickzone-gold duration-500" href="#">Latest</a></h2>
         <h2><a class="text-flickzone-grey pl-2 hover:text-flickzone-gold duration-500" href="#">Popular</a></h2>
         <h2><a class="text-flickzone-grey pl-2 hover:text-flickzone-gold duration-500" href="#">Best</a></h2>
       </div>
 
       <div class="flex flex-wrap">
-        <div *ngFor="let movie of movies" class="group relative p-1 overflow-hidden basis-1/3">
+        <div *ngFor="let movie of movies" class="group relative p-1 overflow-hidden basis-1/3 md:basis-1/4 lg:basis-1/3 ">
           <img src="../../../assets/{{movie.imageUrl}}" class="group-hover:scale-110 rounded-md group-hover:opacity-50 duration-500 w-full">
           <div class="absolute px-6 bottom-8">
             <h3 class="text-flickzone-grey group-hover:text-flickzone-yellow group-hover:mb-2 duration-500">{{movie.name}}</h3>
@@ -27,10 +27,10 @@
       </div>
     </div>
     <!--HOT NEWS SECTION-->
-    <div class="basis-1/3">
+    <div class="basis-1/3 pl-5 md:pl-0">
       <h2 class="text-flickzone-grey mb-8">Hot News</h2>
-      <div class="flex flex-col h-full pb-16 justify-between">
-        <div *ngFor="let new of news" class="flex items-center group">
+      <div class="flex flex-col lg:h-full lg:pb-16 justify-start ">
+        <div *ngFor="let new of news" class="flex items-center group p-2">
           <div class="basis-1/3 h-full">
             <img src="../../../assets/{{new.imageUrl}}" class="h-full w-full object-cover rounded-md">
           </div>
@@ -45,6 +45,34 @@
   </div>
 
 </section>
+
+<!--Matrix Section-->
+<section class="bg-white">
+  <div class="container flex items-center justify-center relative ">
+    <div class="hidden md:block md:basis-1/3 lg:basis-1/2">
+      <img src="../../../assets/gotg.png" class="lg:absolute lg:bottom-0 w-110 items-center lg:ml-20">
+    </div>
+    <div class="md:basis-2/3 lg:basis-1/2">
+      <div class="flex flex-col justify-center py-10 w-3/4 md:w-full">
+        <h3 class="tracking-wider text-flickzone-gold">ACTION, DRAMA, THRILLER </h3>
+        <h2 class="mb-2">The Guardian Of The Galaxy</h2>
+        <p class="text-sm mb-2">Marvel's "Guardians of the Galaxy," expands the Marvel Cinematic Universe into the cosmos, where brash adventurer Peter Quill finds himself the object of an unrelenting bounty hunt</p>
+        <h3 class="tracking-wider text-red-800">8 Wins 34 Nominations</h3>     
+      </div>
+    </div>
+    <!--Oldie-->
+    <div class="right-10 lg:left-0 absolute -top-12 w-20 h-20 lg:w-24 lg:h-24 bg-flickzone-yellow rounded-full flex text-center items-center">
+      <p class="font-gemunu uppercase font-bold text-sm lg:text-xl  text-flickzone-gold -rotate-45 m-2.5">Oldie & Goldie</p>
+    </div>
+  </div>
+</section>
+
+<post-section></post-section>
+
+  
+
+</body>
+
 
 
 <!-- <div class="container mt-3">

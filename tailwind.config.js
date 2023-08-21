@@ -22,7 +22,8 @@ module.exports = {
          'flickzone-gold': '#735F32',
       },
       spacing: {
-        128: '32rem'
+        128: '32rem',
+        110: '25rem'
       }
     },
   },
